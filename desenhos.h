@@ -1,3 +1,6 @@
+#ifndef DESENHOS_H
+#define DESENHOS_H
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -517,3 +520,4 @@ WWWWWWWWWWWWWWWWWWWWW\n\
 WWWWWWWWWWWWWWWWWWWWW\n\
 WWWWWWWWWWWWWWWWWWWWW";
 
+#endif
