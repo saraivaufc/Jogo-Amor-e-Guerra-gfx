@@ -19,12 +19,12 @@ typedef struct{
     int xA;//posiaoo anterior
     int yA;//posiaoo anterior
     char forma;
-    char *forma_Dir;//para cada posi脙搂脙拢o o Objeto possui uma forma pr脙漏_definida
+    char *forma_Dir;//para cada posi莽茫o o Objeto possui uma forma pr茅_definida
     char *forma_Esq;
     char *forma_Cim;
     char *forma_Bai;
-    int existe;//boolean dizendo se ele existe 1 ou n脙拢o 0, muito usado na hora de imprimir
-    int moveu;//boolean dizendo se ele se moveu 1 ou n脙拢o moveu 0
+    int existe;//boolean dizendo se ele existe 1 ou n茫o 0, muito usado na hora de imprimir
+    int moveu;//boolean dizendo se ele se moveu 1 ou n茫o moveu 0
 }Objeto_;
 
 typedef struct{
@@ -69,22 +69,22 @@ extern char *nada;
 //
 
 
-void Criar_Parede_Chao(); //essa fun脙搂脙拢o cria a parede e o ch脙拢o do jogo
+void Criar_Parede_Chao(); //essa fun莽茫o cria a parede e o ch茫o do jogo
 void Limpar_Buffer(); //Limpa o Buffer do teclado, caso o usuario matenha pressionado alguma tecla
 void explodir(int x , int y);
-void Explodir_Robo(); //se algum cora脙搂脙拢o bater no Robo ele explode
-void Explodir_Coracao(int x, int y); //essa func脙拢o explode o Cora脙搂脙拢o
-void Mata_Robo(); //essa fun脙搂脙拢o mata o robo
-void Mata_Coracao(); //essa fun脙搂脙拢o mata o cora脙搂脙拢o
+void Explodir_Robo(); //se algum cora莽茫o bater no Robo ele explode
+void Explodir_Coracao(int x, int y); //essa func茫o explode o Cora莽茫o
+void Mata_Robo(); //essa fun莽茫o mata o robo
+void Mata_Coracao(); //essa fun莽茫o mata o cora莽茫o
 void Impede_Choque_Parede();//mata o proetil quando ele se chocar com a parede
 void Matar_Projetil(); //mata o projetil
 void Ganhou(); //se o usuario ganhou
 void Perdeu(); //se o usuario perdeu
-void Apagar_Robo(); //apaga a posi脙搂脙拢o anterior ou atual do Robo
-void Apagar_Coracao();//verifica se Cora脙搂脙拢o se mexeu, se sim, apaga a posi脙搂脙拢o anterior
-void Apagar_Projetil();//apaga a posi脙搂脙拢o anterio do projetil
-int Verifica_Bateu_Parede(int x, int y);//verifica se x e y est聛0聤0o em alguma parede
-void Imprime_Parede(int x, int y);//essa fun聛0聤4聛0聤0o imprime uma parede na Pos聛0聤4聛0聤0o (X,Y)
+void Apagar_Robo(); //apaga a posi莽茫o anterior ou atual do Robo
+void Apagar_Coracao();//verifica se Cora莽茫o se mexeu, se sim, apaga a posi莽茫o anterior
+void Apagar_Projetil();//apaga a posi莽茫o anterio do projetil
+int Verifica_Bateu_Parede(int x, int y);//verifica se x e y estão em alguma parede
+void Imprime_Parede(int x, int y);//essa função imprime uma parede na Posção (X,Y)
 
 void Criar_Parede_Chao(){
 	for(int i=0;i<x_janela;i++)
@@ -140,7 +140,7 @@ void Apagar_Projetil(){
     }
 }
 
-void explodir(int x , int y){//tenho de passar essa fun脙搂脙拢o para uma Lista encadeada ou Arvore Binaria
+void explodir(int x , int y){//tenho de passar essa fun莽茫o para uma Lista encadeada ou Arvore Binaria
 
 	imprime_objeto(Projetil.xA,Projetil.yA,branco);
 	imprime_objeto_pequeno(x,y,micro);

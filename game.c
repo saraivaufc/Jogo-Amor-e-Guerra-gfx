@@ -14,21 +14,21 @@
 #define tamanho_janela_x 1000
 #define tamanho_janela_y 600
 
-#define Numero_Coracoes  10 //aqui Ã© a quantidade de coraÃ§Ãµes
+#define Numero_Coracoes  10 //aqui é a quantidade de corações
 #define fori(x) for(int x=0;x<Numero_Coracoes;x++)
 
 typedef struct{
-    int x;//posiÃ§Ã£o atual
-    int y;//posiÃ§Ã£o atual
-    int xA;//posiÃ§Ã£o anterior
-    int yA;//posiÃ§Ã£o anterior
+    int x;//posição atual
+    int y;//posição atual
+    int xA;//posição anterior
+    int yA;//posição anterior
     char forma;
-    char *forma_Dir;//para cada posiÃ§Ã£o o Objeto possui uma forma prÃ©_definida
+    char *forma_Dir;//para cada posição o Objeto possui uma forma pré_definida
     char *forma_Esq;
     char *forma_Cim;
     char *forma_Bai;
-    int existe;//boolean dizendo se ele existe 1 ou nÃ£o 0, muito usado na hora de imprimir
-    int moveu;//boolean dizendo se ele se moveu 1 ou nÃ£o moveu 0
+    int existe;//boolean dizendo se ele existe 1 ou não 0, muito usado na hora de imprimir
+    int moveu;//boolean dizendo se ele se moveu 1 ou não moveu 0
 }Objeto_;
 
 typedef struct{
@@ -46,21 +46,21 @@ typedef struct{
     Coracao_ Coracao[Numero_Coracoes];
     int comando;
 
-void Iniciar_Game();//essa funcÃ£o cria a Janela inicial
-void Iniciar_Variaveis();//essa funÃ§Ã£o inicializa todas as variaveis do jogo
+void Iniciar_Game();//essa funcão cria a Janela inicial
+void Iniciar_Variaveis();//essa função inicializa todas as variaveis do jogo
 void Recebe_Comando();//recebe um comando do teclado
-void Proxima_Posicao_Robo(); //essa funcÃ£o calcula qual serÃ¡ a proxima posiÃ§Ã£o do Robo
-void Proxima_Posicao_Coracao();//essa funÃ§Ã£o calcula a posiÃ§Ã£o de todos os coraÃ§Ãµes
-void Proxima_Posicao_Projetil(); //verifica qual serÃ¡ a proxima posiÃ§Ã£o do Projetil se esse "Existir();"
+void Proxima_Posicao_Robo(); //essa funcão calcula qual será a proxima posição do Robo
+void Proxima_Posicao_Coracao();//essa função calcula a posição de todos os corações
+void Proxima_Posicao_Projetil(); //verifica qual será a proxima posição do Projetil se esse "Existir();"
 void Trata_Posicao_Robo(); //impede que o Robo se choque o a parede
-void Trata_Posicao_Coracao(); //impede que algum coraÃ§Ã£o se choque com a parede e com o Robo
-void Trata_Posicao_Projetil();//verifica se o projetiu se chocou com algum CoraÃ§Ã£o ou com alguma parede
-void Atualizar(); //essa funÃ§Ã£o atualiza o estado do Jogo
+void Trata_Posicao_Coracao(); //impede que algum coração se choque com a parede e com o Robo
+void Trata_Posicao_Projetil();//verifica se o projetiu se chocou com algum Coração ou com alguma parede
+void Atualizar(); //essa função atualiza o estado do Jogo
 void Verifica_Vitoria(); //verifica se o jogador ganhou o jogo
 void Desenha_Robo(); //Imprime o Robo
-void Desenha_Coracao(); //Imprime todos os coraÃ§Ãµes
+void Desenha_Coracao(); //Imprime todos os corações
 void Desenha_Projetil(); //Se Projetil existir(); imprime ele
-void Zerar_Variaveis(); //Zera algumas variaveis que precisam ser zeradas apÃ³s cada execuÃ§Ã£o
+void Zerar_Variaveis(); //Zera algumas variaveis que precisam ser zeradas após cada execução
 
 extern char * cabecaDireita;
 extern char * cabecaEsquerda;
@@ -109,7 +109,7 @@ void Iniciar_Variaveis(){
     Projetil.forma_Cim=balaCima;
     Projetil.forma_Bai=balaBaixo;
 
-//aqui eu inicializo as variaveis dos CoraÃ§Ãµes
+//aqui eu inicializo as variaveis dos Corações
     srand(time(NULL));
     fori(i){
         Coracao[i].x=(int) (rand()%(x_janela-6))+4;
@@ -291,7 +291,7 @@ void Trata_Posicao_Coracao(){
 	{
 		if(Coracao[i].x == Robo.x && Coracao[i].y == Robo.y)
 			Perdeu();
-	    if(Verifica_Bateu_Parede(Coracao[i].x, Coracao[i].y)){//O cora0400o chocou-se com a parede
+	    if(Verifica_Bateu_Parede(Coracao[i].x, Coracao[i].y)){//O cora�0�4�0�0o chocou-se com a parede
 	        Imprime_Parede(Coracao[i].x,Coracao[i].y);
 	        Coracao[i].x=Coracao[i].xA;
 	        Coracao[i].y=Coracao[i].yA;
@@ -301,7 +301,7 @@ void Trata_Posicao_Coracao(){
 
 void Trata_Posicao_Projetil(){
 	fori(i){
-		if(Projetil.x == Coracao[i].x && Projetil.y == Coracao[i].y){//Se o Projetiu acertou algum Cora0400o
+		if(Projetil.x == Coracao[i].x && Projetil.y == Coracao[i].y){//Se o Projetiu acertou algum Cora�0�4�0�0o
 		  movexy(Projetil.x,Projetil.y);
 		    dpixel(coracao);
 			Projetil.existe=0;
