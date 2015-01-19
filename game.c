@@ -77,9 +77,7 @@ extern char * branco;
 
 void Iniciar_Game(){
     criar_janela(tamanho_janela_x,tamanho_janela_y,"Jogo Perfeito");
-    set_fundo('W');
     limpar_tela();
-    repintar();
 }
 
 void Iniciar_Variaveis(){
@@ -125,22 +123,23 @@ void Iniciar_Variaveis(){
 
 void Recebe_Comando(){
     char c;
-    if(tecla_pressionada())
+    if(tecla_pressionada()){
         comando=get_tecla();
-	while(tecla_pressionada())
+	while(tecla_pressionada()){
 		c=get_tecla();
-	    printf("%d",c);
+	}
+	printf("%d",c);
+    }
     if(comando == TECLA_ESPACO){
 		system("aplay tiro.wav&");
 		Projetil.existe=1;
 		Projetil.forma=Robo.forma;
-		if(Verifica_Bateu_Parede(Projetil.x,Projetil.y))
+		if(Verifica_Bateu_Parede(Projetil.x,Projetil.y)){
 		    Imprime_Parede(Projetil.x,Projetil.y);
-		else imprime_objeto(Projetil.x,Projetil.y,branco);
+		}else imprime_objeto(Projetil.x,Projetil.y,branco);
 		Projetil.x=Robo.x;
 		Projetil.y=Robo.y;
 	}
-	c=0;
 }
 
 void Proxima_Posicao_Robo(){

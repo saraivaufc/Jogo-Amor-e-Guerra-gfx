@@ -1,5 +1,5 @@
 /* 
-* Versão Originial por David Oliveira Sena sena.ufc@gmail.com
+* Versão Originial em http://www.nd.edu/~dthain/courses/cse20211/fall2011/gfx
 *
 * Nova versão por Ciano Saraiva saraiva.ufc@gmail.com
 * 

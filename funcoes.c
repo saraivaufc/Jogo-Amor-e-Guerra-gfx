@@ -95,6 +95,9 @@ void Criar_Parede_Chao(){
 			{
 				movexy(i,j);
 				dpixel(parede);
+			}else
+			{
+				imprime_objeto(i,j,branco);
 			}
 		}
 	}
